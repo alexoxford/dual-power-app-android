@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 
 class MainFragment : Fragment() {
 
@@ -22,6 +23,8 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dppList = view.findViewById(R.id.dppRv)
+        dppList.adapter = adapter
 
         view.findViewById<TextView>(R.id.info).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
